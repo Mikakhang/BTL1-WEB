@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng ký</title>
+    <link rel="shortcut icon" href="favicon.png">
+    
+    <!--
+    <link rel="stylesheet" href="library/bootstrap.min.css">
+    <link rel="stylesheet" href="library/Font-Awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="library/quill.snow.css">-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand" href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                width="37" height="37">
+                <path fill="#78909c"
+                    d="M19 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM14 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                <path fill="#546e7a" d="M16 32H18V34H16zM11 32H13V34H11z" />
+                <path fill="#78909c"
+                    d="M33 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM28 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                <path fill="#546e7a" d="M30 32H32V34H30zM25 32H27V34H25z" />
+                <path fill="#84ffff" d="M45 18L31 7 28.456 14.556z" />
+                <path fill="#00e5ff" d="M31 7L6 14 4 20 28.456 14.556z" />
+                <path fill="#00b0ff" d="M45 18L28.456 14.556 29.931 25.456z" />
+                <path fill="#0091ea" d="M4 20L28.456 14.556 29.931 25.456 5 27z" />
+                <path fill="#1976d2" d="M45 18L29.931 25.456 35 32z" />
+                <path fill="#0d47a1" d="M5 27L29.931 25.456 35 32 9 32z" /></svg>Karma</a>
+        <button class="navbar-toggler rounded-0 b-0" id="nav-toggle-button" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./index.html">Trang chủ <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./question.html">Câu hỏi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" tabindex="-1" aria-disabled="true">Đề thi</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#"><i class="fa fa-search"></i> Tìm kiếm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Đăng
+                        nhập<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="#"><i class="fa fa-user"></i> Đăng ký<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="area container-fluid text-light" id="area">
+        <ul class="circles" id="circle-area">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="row" style="height:15%" id="row-1">
+        </div>
+        <div class="row align-item-center" id="row-2">
+            <div class="col-md-1"></div>
+
+            <div class="col-md-5 d-none d-md-flex justify-content-start align-items-center">
+                <svg class="d-flex" style="flex-basis: 80%;" viewBox="0 0 48 48">
+                    <path fill="#78909c"
+                        d="M19 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM14 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                    <path fill="#546e7a" d="M16 32H18V34H16zM11 32H13V34H11z" />
+                    <path fill="#78909c"
+                        d="M33 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM28 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                    <path fill="#546e7a" d="M30 32H32V34H30zM25 32H27V34H25z" />
+                    <path fill="#84ffff" d="M45 18L31 7 28.456 14.556z" />
+                    <path fill="#00e5ff" d="M31 7L6 14 4 20 28.456 14.556z" />
+                    <path fill="#00b0ff" d="M45 18L28.456 14.556 29.931 25.456z" />
+                    <path fill="#0091ea" d="M4 20L28.456 14.556 29.931 25.456 5 27z" />
+                    <path fill="#1976d2" d="M45 18L29.931 25.456 35 32z" />
+                    <path fill="#0d47a1" d="M5 27L29.931 25.456 35 32 9 32z" /></svg>
+            </div>
+            <div class="col-lg-5 col-md-6 text-center text-md-left" id="left-panel">
+                <h1 class="display-3 text-center text-md-left">Đăng ký</h1>
+                <form id="loginform" action="#" method="post">
+                    <div class="form-row form-group justify-content-center justify-content-md-start">
+                        <label for="uname" class="text-md-left">Tài khoản</label>
+                        <input class="form-control form-control-lg" id="uname" name="uname" type="text"
+                            placeholder="Username">
+                    </div>
+                    <div class="form-row form-group justify-content-center justify-content-md-start">
+                        <label for="password">Mật khẩu</label>
+                        <input class="form-control form-control-lg" id="password" name="password" type="password"
+                            placeholder="Password">
+                    </div>
+                    <div class="form-row form-group justify-content-center justify-content-md-start">
+                        <label for="r-password">Nhập lại mật khẩu</label>
+                        <input class="form-control form-control-lg" id="r-password" name="r-password" type="password"
+                            placeholder="Password">
+                    </div>
+                    <div class="form-row form-group justify-content-center justify-content-md-start">
+
+                        <input type="button" class="btn btn-outline-light btn-lg mt-3" value="Đăng ký">
+
+                    </div>
+                </form>
+                <a href="login.html" class="text-light text-lg">Đã có tài khoản?</a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid py-3" id="footer">
+        <div class="row">
+            <div class="col-md-1">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="37" height="37">
+                    <path fill="#78909c"
+                        d="M19 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM14 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                    <path fill="#546e7a" d="M16 32H18V34H16zM11 32H13V34H11z" />
+                    <path fill="#78909c"
+                        d="M33 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM28 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                    <path fill="#546e7a" d="M30 32H32V34H30zM25 32H27V34H25z" />
+                    <path fill="#84ffff" d="M45 18L31 7 28.456 14.556z" />
+                    <path fill="#00e5ff" d="M31 7L6 14 4 20 28.456 14.556z" />
+                    <path fill="#00b0ff" d="M45 18L28.456 14.556 29.931 25.456z" />
+                    <path fill="#0091ea" d="M4 20L28.456 14.556 29.931 25.456 5 27z" />
+                    <path fill="#1976d2" d="M45 18L29.931 25.456 35 32z" />
+                    <path fill="#0d47a1" d="M5 27L29.931 25.456 35 32 9 32z" /></svg>
+            </div>
+            <div class="col-md">
+                <h5>Karma</h5>
+                <p class="text-justify">Assignment môn lập trình web - Xây dựng website quản lý ngân hàng câu hỏi đề thi
+                    trắc nghiệm, hỗ trợ
+                    quản lý & tạo lập đề thi</p>
+            </div>
+            <div class="col-md">
+                <div class="row">
+                    <div class="col">
+                        <h5>Danh sách thành viên</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p class="mb-0">Đặng Anh Văn</p>
+                        <p class="mb-0">Tô Phú Quý</p>
+                        <p class="mb">Trương Minh Khang</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="row">
+                    <div class="col">
+                        <h5>Thông tin projects</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            <a href="#">Github</a><br>
+                            <a href="https://getbootstrap.com/">Bootstrap</a><br>
+                            <a href="https://quilljs.com/">QuillJs</a><br>
+                            <a href="https://katex.org/">Katex</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="row">
+                    <div class="col">
+                        <h5>Liên hệ</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-twitter"></a>
+                            <a href="#" class="fa fa-reddit"></a>
+                            <a href="#" class="fa fa-rss"></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    <script src="library/jquery-3.3.1.slim.min.js"></script>
+    <script src="library/popper.min.js"></script>
+    <script src="library/bootstrap.min.js"></script>
+    <script src="library/quill.js"></script>-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

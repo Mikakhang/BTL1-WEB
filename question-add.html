@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thêm câu hỏi</title>
+    <link rel="shortcut icon" href="favicon.png">
+
+    <link rel="stylesheet" href="library/bootstrap.min.css">
+    <link rel="stylesheet" href="library/Font-Awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="library/quill.snow.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+
+    <!--
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js"></script>
+    -->
+
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="question.css">
+    <style>
+        .ql-container {
+            font-size: 1rem;
+        }
+
+        div.ql-editor img {
+            max-height: 200px;
+        }
+
+        .ql-tooltip.ql-editing {
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand" href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                width="37" height="37">
+                <path fill="#78909c"
+                    d="M19 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM14 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                <path fill="#546e7a" d="M16 32H18V34H16zM11 32H13V34H11z" />
+                <path fill="#78909c"
+                    d="M33 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM28 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                <path fill="#546e7a" d="M30 32H32V34H30zM25 32H27V34H25z" />
+                <path fill="#84ffff" d="M45 18L31 7 28.456 14.556z" />
+                <path fill="#00e5ff" d="M31 7L6 14 4 20 28.456 14.556z" />
+                <path fill="#00b0ff" d="M45 18L28.456 14.556 29.931 25.456z" />
+                <path fill="#0091ea" d="M4 20L28.456 14.556 29.931 25.456 5 27z" />
+                <path fill="#1976d2" d="M45 18L29.931 25.456 35 32z" />
+                <path fill="#0d47a1" d="M5 27L29.931 25.456 35 32 9 32z" /></svg>Karma</a>
+        <button class="navbar-toggler rounded-0 b-0" id="nav-toggle-button" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="./question.html">Câu hỏi</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" tabindex="-1" aria-disabled="true">Đề thi</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#"><i class="fa fa-search"></i> Tìm kiếm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Đăng
+                        nhập<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./register.html"><i class="fa fa-user"></i> Đăng ký<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- TODO -->
+
+    <div class="container-fluid px-4" id="main-container">
+        <div class="row">
+            <div class="col pl-0 pr-0">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="question.html">Câu hỏi</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Thêm câu hỏi</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 d-md-block d-none">
+                <div class="row">
+                    <h3>Tùy chọn:</h3>
+                </div>
+                <div class="row pt-1" id="left-sidebar">
+                    <div class="btn-group-vertical">
+                        <a class="btn btn-outline-success" href="topic.html">Sửa môn học</a>
+                        <a class="btn btn-outline-success" href="topic.html">Sửa chủ đề</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="row d-block d-md-none">
+                    <div class="col mb-3 pl-0 pr-0">
+                        <div class="btn-group w-100" role="group" aria-label="...">
+                            <a class="btn btn-outline-success" href="topic.html">Sửa môn học</a>
+                            <a class="btn btn-outline-success" href="topic.html">Sửa chủ đề</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col pl-0 d-none d-md-block">
+                        <h3>Thêm câu hỏi</h3>
+                    </div>
+                    <div class="col pl-0 pr-0">
+                        <div class="btn-group w-100" role="group" aria-label="...">
+                            <a class="btn btn-outline-success" href="question.html">Trở về</a>
+                            <button class="btn btn-outline-success">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col pl-0 pr-0">
+                        <form action="#" method="POST">
+                            <div class="form-row">
+                                <div class="form-group col-md">
+                                    <label for="mon">Chọn môn học</label>
+                                    <select id="mon" class="form-control">
+                                        <option selected>None</option>
+                                        <option>Toán</option>
+                                        <option>Lý</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md">
+                                    <label for="chude">Chọn chủ đề</label>
+                                    <select id="chude" class="form-control">
+                                        <option selected>None</option>
+                                        <option>Chủ đề 1</option>
+                                        <option>Chủ đề 2</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-md">
+                                    <label for="dokho">Chọn độ khó</label>
+                                    <select id="dokho" class="form-control">
+                                        <option selected>None</option>
+                                        <option>Dễ</option>
+                                        <option>Trung bình</option>
+                                        <option>Khó</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row pb-2">
+                    Nội dung
+                </div>
+
+                <!-- IMPORTANT: EDITOR -->
+                <div class="row d-block pb-4">
+                    <div class="col pl-0 pr-0">
+                        <div id="editor">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end pb-4" id="add-area">
+                    <div class="col pl-0">
+                        <button class="btn btn-outline-primary" id="add-btn">Thêm phương án trả lời</button>
+                        <button class="btn btn-outline-primary">Lưu câu hỏi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="library/jquery-3.3.1.slim.min.js"></script>
+    <script src="library/popper.min.js"></script>
+    <script src="library/bootstrap.min.js"></script>
+    <script src="library/quill.js"></script>
+
+    <!--
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>-->
+
+    <script src="./question.js"></script>
+    <script>
+        var toolBarOptions = [
+            ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+            ['blockquote', 'code-block'],
+            [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+            [{ 'script': 'sub' }, { 'script': 'super' }],      // superscript/subscript
+            [{ 'indent': '-1' }, { 'indent': '+1' }],          // outdent/indent
+            [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
+            [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+            ['link', 'image', 'formula'],          // add's image support
+            [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+            [{ 'font': [] }],
+            [{ 'align': [] }],
+            ['clean']
+        ];
+
+        var quill = new Quill('#editor', {
+            modules: {
+                toolbar: toolBarOptions
+            },
+            theme: 'snow'
+        });
+
+        var answerArr = [];
+        var answerId = "answer-";
+        var answerNum = 0;
+
+        var addBtn = $('#add-btn');
+        addBtn.click(function () {
+            var num = answerNum++;
+            var id = answerId + num;
+            var addArea = $('#add-area');
+            addArea.before(`
+                <div class="row pb-4 pt-2" id="answer-area-${num}">
+                    <div class="col-md-3">
+                        <div class="row">
+                            <div class="col-5 pl-0">
+                                <button class="btn btn-outline-danger mb-2 rm-btn" id="rm-btn-${id}" onclick="removeClick(event)">Xóa</button>
+                            </div>
+                            <div class="col-7 pl-0">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="customRadio${num}" name="answer-choice"" value="${num}" class="custom-control-input">
+                                    <label class="custom-control-label" for="customRadio${num}"><span class="badge badge-pill badge-dark">ĐÚNG</span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row d-block">
+                            <div class="col pl-0 pr-0">
+                                <div id="${id}">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>`
+            );
+            answerArr.push(new Quill("#" + id, {
+                modules: {
+                    toolbar: toolBarOptions
+                },
+                theme: 'snow'
+            }));
+        });
+        function removeClick(event) {
+            var id = event.target.id;
+            var questionNum = Number(id.substring(14));
+            answerArr[questionNum] = 0;
+            $('#answer-area-' + questionNum).remove();
+        }
+    </script>
+</body>
+
+</html>

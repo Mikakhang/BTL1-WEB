@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Danh sách đề thi</title>
+    <link rel="shortcut icon" href="favicon.png">
+    <!--<link rel="stylesheet" href="library/bootstrap.min.css">
+    <link rel="stylesheet" href="library/Font-Awesome-4.7.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="template.css">
+    <link rel="stylesheet" href="question.css">
+    <style>
+        .ql-container {
+            font-size: 1rem;
+        }
+
+        div.ql-editor img {
+            height: 200px;
+        }
+
+        div.ql-container.ql-snow {
+            border: none;
+        }
+
+        div.ql-container.ql-snow .ql-editor {
+            padding-left: 0;
+            padding-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark fixed-top">
+        <a class="navbar-brand" href="./index.html"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"
+                width="37" height="37">
+                <path fill="#78909c"
+                    d="M19 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM14 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                <path fill="#546e7a" d="M16 32H18V34H16zM11 32H13V34H11z" />
+                <path fill="#78909c"
+                    d="M33 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39zM28 39c-.5 0-1-.1-1-1.1V34c0-.6-.4-1-1-1s-1 .4-1 1v3.9c0 1.9 1.2 3.1 3 3.1V39z" />
+                <path fill="#546e7a" d="M30 32H32V34H30zM25 32H27V34H25z" />
+                <path fill="#84ffff" d="M45 18L31 7 28.456 14.556z" />
+                <path fill="#00e5ff" d="M31 7L6 14 4 20 28.456 14.556z" />
+                <path fill="#00b0ff" d="M45 18L28.456 14.556 29.931 25.456z" />
+                <path fill="#0091ea" d="M4 20L28.456 14.556 29.931 25.456 5 27z" />
+                <path fill="#1976d2" d="M45 18L29.931 25.456 35 32z" />
+                <path fill="#0d47a1" d="M5 27L29.931 25.456 35 32 9 32z" /></svg>Karma</a>
+        <button class="navbar-toggler rounded-0 b-0" id="nav-toggle-button" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./index.html">Trang chủ</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="./question.html">Câu hỏi</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link text-light" href="./danh-sach-de-thi.html">Danh sách đề thi</a>
+                </li>				
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#" tabindex="-1" aria-disabled="true">Chi tiết đề thi</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#"><i class="fa fa-search"></i> Tìm kiếm</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./login.html"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                        Đăng
+                        nhập<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="./register.html"><i class="fa fa-user"></i> Đăng ký<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- TODO -->
+
+    <div class="container-fluid px-4" id="main-container">
+        <div class="row">
+            <div class="col pl-0 pr-0">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Trang chủ</a></li>
+                        <li class="breadcrumb-item"><a href="question.html">Câu hỏi</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Danh sách đề thi</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2 d-none d-md-block">
+                <div class="row pb-2">
+                    <div class="col pl-0">
+                        <h3>Tùy chọn</h3>
+                    </div>
+                </div>
+                <div class="row pt-1" id="left-sidebar">
+                    <div class="col pl-0">
+                        <div class="btn-group-vertical">
+                            <a class="btn btn-outline-success" href="them-de-thi.html">Thêm đề thi</a>
+							<a class="btn btn-outline-success" href="danh-sach-de-thi.html">Danh sách đề thi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row pb-2">
+                    <div class="col pl-0">
+                        <h3>Danh sách đề thi</h3>
+                    </div>
+                </div>
+               <div class="row">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Môn học</th>
+                                    <th scope="col">Tên đề</th>
+                                    <th scope="col">Thời gian</th>
+                                    <th scope="col">Số câu hỏi</th>
+                                    <th scope="col">Xem</th>
+                                    <th scope="col">Chọn</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">0001</th>
+                                    <td>Mác</td>
+                                    <td>Đề kiểm tra giữa kỳ</td>
+                                    <td>60 phút</td>
+                                    <td>4 câu</td>
+                                    <td><a href="./chi-tiet-de-thi.html" class="btn btn-outline-danger">Xem</a></td>
+									<td><button class="btn btn-outline-danger">Xóa</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>				
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <script src="library/jquery-3.3.1.slim.min.js"></script>
+    <script src="library/popper.min.js"></script>
+    <script src="library/bootstrap.min.js"></script>
+    <script src="library/quill.js"></script>-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="./question.js"></script>
+    <script>
+        $(function () {
+            $('.edit-subject-btn').click(function (event) {
+                var id = event.target.id;
+                var inputId = id.replace('btn', 'subject');
+                var inputElement = $('#' + inputId);
+                if (inputElement.prop('disabled')) {
+                    inputElement.prop('disabled', false);
+                    event.target.innerHTML = 'Lưu';
+                } else {
+                    inputElement.prop('disabled', true);
+                    event.target.innerHTML = 'Sửa';
+                }
+            });
+        });
+
+        function addSubject(event) {
+            var col = $('#add-subject-col');
+            $('#add-topic-col').addClass('d-none');
+            console.log(col);
+            if (col.hasClass('d-none')) {
+                col.removeClass('d-none');
+            } else {
+                col.addClass('d-none');
+            }
+        }
+
+        function addTopic(event) {
+            var col = $('#add-topic-col');
+            $('#add-subject-col').addClass('d-none');
+            console.log(col);
+            if (col.hasClass('d-none')) {
+                col.removeClass('d-none');
+            } else {
+                col.addClass('d-none');
+            }
+        }
+    </script>
+</body>
+
+</html>
