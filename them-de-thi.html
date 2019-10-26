@@ -13,8 +13,13 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="template.css">
-    <link rel="stylesheet" href="question.css">
+    <link rel="stylesheet" href="them-de-thi.css">
 	<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+	    <script type="text/javascript" src="js/jquery.min.js"></script>
+		<head>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+</head>
 </head>
 
 <body>
@@ -81,23 +86,36 @@
                 </nav>
             </div>
         </div>
+				<div id="buoc1"></div>
         <div class="row">
+			<form id="msform">
+				<fieldset>
+					<h2 class="fs-title">Điền thông tin bài thi</h2>
+					<input type="text" name="Môn thi" placeholder="Môn thi" />
+					<input type="text" name="Tên bài thi" placeholder="Tên bài thi" />
+					<input type="text" name="Thời gian thi" placeholder="Thời gian thi" />
+					<input type="text" name="Mã đề thi" placeholder="Mã đề thi" />
+					<button onclick="topFunction()" id="myBtn"><a href="#buoc2">Bước tiếp theo</a></button>
+
+				</fieldset>
+			</form> 
+		
+        </div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div id="buoc2"></div>
+       <div class="row">
             <div class="col-md-2 d-md-block d-none">
-                <div class="row">
-                    <h3>Tùy chọn:</h3>
-                </div>
-                <div class="row pt-1" id="left-sidebar">
-                    <div class="col pl-0">
-                        <div class="btn-group-vertical rounded-0">
-                            <a class="btn btn-outline-success" href="them-de-thi.html">Thêm đề thi</a>
-							<a class="btn btn-outline-success" href="danh-sach-de-thi.html">Danh sách đề thi</a>
-                        </div>
-                    </div>
-                </div>
+
+			<div id="step1"><h1> Bước thêm câu hỏi</h1></div>
             </div>
-			
-                <div class="row">
-                    <div class="col pl-0 pr-0">
+
+            <div class="row">
+
+                <div class="col pl-0 pr-0">
                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home"
@@ -112,23 +130,6 @@
                             <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                                 aria-labelledby="pills-home-tab">
             <div class="col-md-10">
-			    <div class="row">
-                    <h3>Thông tin đề thi:</h3>
-                </div>
-                <div class="row pt-1 pb-1" id="filter-bar">
-                    <div class="col-md mb-3 pl-0 pr-0 pr-md-2">
-                        <input type="text" class="form-control" placeholder="Môn thi">
-                    </div>				
-                    <div class="col-md mb-3 pl-0 pr-0 pr-md-2">
-                        <input type="text" class="form-control" placeholder="Tên đề thi">
-                    </div>
-                    <div class="col-md mb-3 pl-0 pr-0 pr-md-2">
-                        <input type="text" class="form-control" placeholder="Thời gian">
-                    </div>
-                    <div class="col-md mb-3 pl-0 pr-0 pr-md-2">
-                        <input type="text" class="form-control" placeholder="Mã đề">
-                    </div>									
-				</div>
                 <div class="row">
                     <h3>Danh sách câu hỏi của bạn:</h3>
                 </div>
@@ -168,6 +169,7 @@
                     </div>
                 </div>
             </div>
+			
                        <div class="table-responsive">
                         <table class="table table-hover table-bordered">
                             <thead>
@@ -278,19 +280,62 @@
                             </tbody>
                         </table>
                     </div>
-                                                             <button class="btn btn-outline-primary w-100">Lưu đề</button>
 						 </div>
                         </div>
                     </div>
                 </div>
         </div>
-    </div>
+						<div class="centerer">
+							<div class="wrap">
+						<a class="btn-0" href="#buoc1">Bước trước</a>
+						<a class="btn-0" href="#buoc3">Bước sau</a>
+						</div>
+												</div>
+    	<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+				<div id="buoc3"></div>
+		<div class="row">;
+            <div class="col pl-0 pr-0">
+				<div class="centerer">
+					<h1>Bước kiểm tra</h1>
+
+
+					<div class="wrap">
+						<a class="btn-0">Xem thử</a>
+						<a class="btn-0" href="#buoc1">Bước 1</a>
+						<a class="btn-0" href="#buoc2">Bước 2</a>
+						<a class="btn-0" >Lưu</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</div>
     <!--
     <script src="library/jquery-3.3.1.slim.min.js"></script>
     <script src="library/popper.min.js"></script>
     <script src="library/bootstrap.min.js"></script>
     <script src="library/quill.js"></script>-->
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -301,7 +346,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <script src="./question.js"></script>
+    <script src="./them-de-thi.js"></script>
 	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 </body>
 
